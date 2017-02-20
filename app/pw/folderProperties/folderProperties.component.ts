@@ -20,7 +20,7 @@ export class FolderPropertiesComponent implements OnInit {
     
     constructor(private _route: ActivatedRoute, private _router: Router, private _dataService: FolderPropertiesService, private _location:Location) { 
         
-        console.log("activeted via route:  " + _route);
+        console.log("activeted via routex:  " + _route);
         
         this.navNodeId = _route.params["value"]["id"];
     }

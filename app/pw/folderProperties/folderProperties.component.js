@@ -20,7 +20,7 @@ var FolderPropertiesComponent = (function () {
         this._dataService = _dataService;
         this._location = _location;
         this.pageTitle = 'Properties';
-        console.log("activeted via route:  " + _route);
+        console.log("activeted via routex:  " + _route);
         this.navNodeId = _route.params["value"]["id"];
     }
     FolderPropertiesComponent.prototype.ngOnInit = function () {
