@@ -1,0 +1,63 @@
+<div class="container-fluid">
+    <div class='panel panel-primary'>
+        <div class='panel-heading'>
+            {{pageTitle}} 
+        </div>
+
+        <div class='panel-body'>
+            <div class="row col-sm-12">
+                <div class="col-sm-6" *ngIf='properties && properties.standardProps'>
+                    <table class='table table-hover'>
+                        <thead>
+                            <tr>
+                                <th colspan="2">
+                                    Standard Properties
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor='let propertyPair of properties.getStandardPropArray()'>
+                                <th>
+                                    {{ propertyPair.name }}
+                                </th>
+                                <td>
+                                    {{ propertyPair.value }}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="col-sm-6" *ngIf='properties && properties.customProps' >
+                    <table class='table table-hover'>
+                        <thead>
+                            <tr>
+                                <th colspan="2">
+                                    Custom Properties
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor='let propertyPair of properties.getCustomPropArray()'>
+                                <th>
+                                    {{ propertyPair.name }}
+                                </th>
+                                <td>
+                                    {{ propertyPair.value }}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <div class='panel-footer'>
+            <a class='btn btn-default' (click)='onBack()'>
+                <i class='glyphicon glyphicon-chevron-left'></i>Back
+            </a>
+        </div>
+
+    </div>
+</div>

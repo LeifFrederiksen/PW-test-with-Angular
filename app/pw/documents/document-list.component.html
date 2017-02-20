@@ -1,0 +1,32 @@
+    <ai-loadingindicator *ngIf='showLoadingLayer'></ai-loadingindicator>
+
+<div class='panel-primary'>
+    <div class='panel-heading'>
+        {{pageTitle}} ({{ getNumberOfDocuments() }})
+    </div>
+    <div class='panel-body'>
+        <div *ngIf='documents && documents.length'>
+            <table class='table table-hover'>
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="col-sm-12" type="text" [formControl]='descriptionFilterByControl' />
+                        </td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor='let document of documents | documentStringFieldFilter: "documentCode": documentCodeFilterBy | documentStringFieldFilter: "description" : descriptionFilterBy '>
+                        <td>{{ document.description }} </td>
+                        <td style="cursor: pointer" (click)="openPW(document)"><span class="glyphicon glyphicon-share-alt" title="Open in PW"></span></td>
+                        <td style="cursor: pointer" (click)='downloadDocument(document)'><span class="glyphicon glyphicon-download-alt" title="Download"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

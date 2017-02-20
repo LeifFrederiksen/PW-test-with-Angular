@@ -1,0 +1,26 @@
+<div class="container-fluid">
+
+    <pm-repositories  class="col-sm-12" *ngIf="getCurrentRepository() == undefined">Loading app ...</pm-repositories>
+
+    <div class='panel panel-primary' *ngIf="getCurrentRepository() != undefined">
+        <div class='panel-heading'>
+            {{pageTitle}}
+        </div>
+        <div class='panel-body'>
+            
+            <div class='row'>
+                <form [formGroup]="searchForm" (ngSubmit)="doSearch($event)">
+                    <div class='col-md-2'>Description:</div>
+                    <div class='col-md-4'>
+                        <input type="text"  formControlName='formDocumentDescriptionSearchValue' autofocus />
+                        <button type="submit" class='btn btn-primary' >Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class='panel panel-primary' *ngIf="getCurrentRepository() != undefined">
+        <pm-documents  *ngIf="getCurrentRepository() != undefined" [globalSearchText]=documentDescriptionSearchValue> Loading app ...</pm-documents>
+    </div>
+</div>                

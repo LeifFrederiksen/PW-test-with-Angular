@@ -1,0 +1,32 @@
+    <ai-loadingindicator *ngIf='showLoadingLayer'></ai-loadingindicator>
+
+    <div *ngIf='navNodes && navNodes.length'>
+        <div class="xxjust-padding">
+            <div class="list-group" style="-webkit-overflow-scrolling: touch;">
+                <a *ngFor='let navNode of navNodes' class="list-group-item">
+                    
+                        <div  class="list-group-item-heading" >
+                            <h4>
+                                <span style="cursor: pointer" *ngIf='navNode.canExpand() && !navNode.isExpanded()' (click) = 'navNode.expand()' class="glyphicon glyphicon-chevron-right"></span>
+                                <span style="cursor: pointer" *ngIf='navNode.isExpanded()' (click) = 'navNode.collapse()' class="glyphicon glyphicon-chevron-down"></span>
+                                <span style="cursor: pointer" (click)='navNode.toggle()'> {{ navNode.properties.Description }} </span>
+                                <!--<span style="cursor: pointer" (click)='navNodeShowDocuments(($event), navNode)'> {{ navNode.properties.Description }} </span>-->
+                            </h4> 
+                        </div>
+
+                        <p class="list-group-item-text">
+                            <span class="xbtn-group xbtn-group-justified">
+                                <span class="btn btn-xsmall btn-info" style="cursor: pointer" (click)='navNodeShowDocuments(($event), navNode)'> Show docs of this folder</span>
+                                <span class="btn btn-xsmall btn-info" style="cursor: pointer" (click)='navNodeShowDocumentsAdd(($event), navNode)'> Add to current docs </span>
+                                <span class="btn btn-xsmall btn-info" style="cursor: pointer" (click)='resetRecursiveDocCounter();navNodeShowDocumentsRecursive(($event), navNode, 0)'> Get all docs </span>
+
+                                <span class="btn btn-xsmall btn-info" ><a [routerLink]="['/pwFolderProperties', navNode.properties['Key_InstanceId']]"><span title="Properties" class="glyphicon glyphicon-cog"></span></a></span>
+                            </span>
+                        </p>
+                    
+                    <pm-navnodes *ngIf="navNode.isExpanded()" [currentNavNode]="navNode"></pm-navnodes>
+                </a>
+            </div>
+        </div>
+    </div>
+
