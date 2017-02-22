@@ -101,7 +101,7 @@ var DocumentListComponent = (function () {
     DocumentListComponent.prototype.toggleLoadingLayer = function (show) {
         this.showLoadingLayer = show;
     };
-    DocumentListComponent.prototype.downloadDocument = function (document) {
+    DocumentListComponent.prototype.openDocument = function (document) {
         this._dataService.downloadDocument(globals_1.Globals.getInstance().getRepository(), document);
     };
     return DocumentListComponent;

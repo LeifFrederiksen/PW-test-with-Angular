@@ -117,7 +117,7 @@ export class DocumentListComponent implements OnInit {
         this.showLoadingLayer = show;
     }
 
-    downloadDocument(document: IDocument) {
+    openDocument(document: IDocument) {
         this._dataService.downloadDocument(Globals.getInstance().getRepository(), document);
     }
 }

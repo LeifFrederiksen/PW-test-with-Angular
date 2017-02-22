@@ -23,7 +23,7 @@
                     <tr *ngFor='let document of documents | documentStringFieldFilter: "documentCode": documentCodeFilterBy | documentStringFieldFilter: "description" : descriptionFilterBy '>
                         <td>{{ document.description }} </td>
                         <td style="cursor: pointer" (click)="openPW(document)"><span class="glyphicon glyphicon-share-alt" title="Open in PW"></span></td>
-                        <td style="cursor: pointer" (click)='downloadDocument(document)'><span class="glyphicon glyphicon-open-file" title="Open"></span></td>
+                        <td style="cursor: pointer" (click)='openDocument(document)'><span class="glyphicon glyphicon-open-file" title="Open"></span></td>
                     </tr>
                 </tbody>
             </table>
