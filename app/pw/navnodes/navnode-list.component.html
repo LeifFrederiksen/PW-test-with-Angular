@@ -20,7 +20,7 @@
                                 <span class="btn btn-xsmall btn-info" style="cursor: pointer" (click)='navNodeShowDocumentsAdd(($event), navNode)'> Add to current docs </span>
                                 <span class="btn btn-xsmall btn-info" style="cursor: pointer" (click)='resetRecursiveDocCounter();navNodeShowDocumentsRecursive(($event), navNode, 0)'> Get all docs </span>
 
-                                <span class="btn btn-xsmall btn-info" ><a [routerLink]="['/pwFolderProperties', navNode.properties['Key_InstanceId']]"><span title="Properties" class="glyphicon glyphicon-cog"></span></a></span>
+                                <span class="btn btn-xsmall btn-info" style="cursor: pointer" routerLink="/pwFolderProperties/{{navNode.properties['Key_InstanceId']}}" title="Properties"><span class="glyphicon glyphicon-cog"></span></span>
                             </span>
                         </p>
                     

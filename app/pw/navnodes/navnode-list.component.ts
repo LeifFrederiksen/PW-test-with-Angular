@@ -1,5 +1,4 @@
 import { Component, Input, Output, OnInit, OnChanges, EventEmitter } from '@angular/core';
-
 import { INavNode, NavNode } from './navnode';
 
 import { NavNodeService } from './navnode.service';
