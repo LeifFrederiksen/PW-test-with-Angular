@@ -8,3 +8,4 @@
     It also starts the lite-server and launches the browser to run the application.
 	
 	this is master
+	favicon
