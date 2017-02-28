@@ -9,6 +9,8 @@ import { WelcomeComponent } from './home/welcome.component';
 
 import { CustomReuseStrategy } from './shared/router/custom-reuse-strategy';
 
+
+import { SharedModule } from "./shared/shared.module";
 import { ProductModule } from './products/product.module';
 import { PWModule } from "./pw/pw.module";
 
@@ -24,6 +26,7 @@ import '../node_modules/hammerjs/hammer.js';
                     HttpModule,
                     MaterialModule,
                     ProductModule,
+                    SharedModule,
                     PWModule,
                     RouterModule.forRoot([
                         { path: '**', component: WelcomeComponent }

@@ -5,10 +5,11 @@ import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { StarComponent } from "./star.component";
 import { LoadingIndicator } from './loadingindicator/loadingindicator.component';
+import { MaterialModule } from '@angular/material';
 
 @NgModule ({
     declarations: [ StarComponent, LoadingIndicator ],
-    imports: [ CommonModule ],
+    imports: [ CommonModule, MaterialModule ],
 
-    exports: [ CommonModule, FormsModule, LoadingIndicator, StarComponent]
+    exports: [ CommonModule, FormsModule, LoadingIndicator, StarComponent ]
 }) export class SharedModule{};

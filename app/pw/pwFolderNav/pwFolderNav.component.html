@@ -3,11 +3,11 @@
     <pm-repositories  class="col-sm-12" *ngIf="getCurrentRepository() == undefined">Loading app ...</pm-repositories>
     
     <div class="row" *ngIf="getCurrentRepository() != undefined" >
-        <div class="col-sm-6" style="max-height: 500px">
+        <div class="col-sm-6" style="height: 80vh;overflow: auto">
             <pm-navnodes>Loading...</pm-navnodes>
         </div>
     
-        <div class="col-sm-6" >
+        <div class="col-sm-6" style="height: 80vh;overflow: auto">
             <pm-documents>Loading...</pm-documents>
         </div>
     </div>

@@ -7,21 +7,11 @@
     right: 0;
     top: 0;
     width: 100%;
-    z-index: 9999;
+    z-index: 500;
     opacity: 0.5;
 }
 
 .loader .loader_inner {
-    background-image: url("app/assets/images/ajax-loader.gif");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-color: #fff;
-    opacity: 1.0;
-    height: 60px;
-    width: 60px;
-    margin-top: -30px;
-    margin-left: -30px;
     left: 50%;
     top: 50%;
     position: absolute;
