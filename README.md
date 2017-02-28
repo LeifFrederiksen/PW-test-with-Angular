@@ -8,11 +8,7 @@
     It also starts the lite-server and launches the browser to run the application.
 	
 	this is master
-<<<<<<< HEAD
 
 Material Design branch
 
 master and Material combined - merged in the favicon change
-=======
-	favicon
->>>>>>> master
