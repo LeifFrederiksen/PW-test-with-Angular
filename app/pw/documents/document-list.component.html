@@ -1,32 +1,13 @@
-    <ai-loadingindicator *ngIf='showLoadingLayer'></ai-loadingindicator>
+<ai-loadingindicator *ngIf='showLoadingLayer'></ai-loadingindicator>
 
-<div class='panel-primary'>
-    <div class='panel-heading'>
-        {{pageTitle}} ({{ getNumberOfDocuments() }})
-    </div>
-    <div class='panel-body'>
-        <div *ngIf='documents && documents.length'>
-            <table class='table table-hover'>
-                <thead>
-                    <tr>
-                        <th>Description</th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input class="col-sm-12" type="text" [formControl]='descriptionFilterByControl' />
-                        </td>
-                    </tr>
-                </thead>
+<md-list *ngIf='documents && documents.length'>
+    <md-input-container>
+        <input mdInput class="col-sm-12" type="text" [formControl]='descriptionFilterByControl' placeholder="Description"/>
+    </md-input-container>
 
-                <tbody>
-                    <tr *ngFor='let document of documents | documentStringFieldFilter: "documentCode": documentCodeFilterBy | documentStringFieldFilter: "description" : descriptionFilterBy '>
-                        <td>{{ document.description }} </td>
-                        <td style="cursor: pointer" (click)="openPW(document)"><span class="glyphicon glyphicon-share-alt" title="Open in PW"></span></td>
-                        <td style="cursor: pointer" (click)='openDocument(document)'><span class="glyphicon glyphicon-open-file" title="Open"></span></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
+    <md-list-item class="noright" *ngFor='let document of documents | documentStringFieldFilter: "documentCode": documentCodeFilterBy | documentStringFieldFilter: "description" : descriptionFilterBy '>
+        <p class="mat-list-text">{{ document.description }} </p>
+        <md-icon (click)="openPW(document)"><span class="glyphicon glyphicon-share-alt" title="Open in PW"></span></md-icon>
+        <md-icon style="cursor: pointer" (click)='openDocument(document)'><span class="glyphicon glyphicon-open-file" title="Open"></span></md-icon>
+    </md-list-item>
+</md-list>

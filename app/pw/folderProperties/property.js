@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var PropertyType;
 (function (PropertyType) {
     PropertyType[PropertyType["String"] = 0] = "String";

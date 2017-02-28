@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var NavNode = (function () {
     function NavNode(instanceId, properties) {
         this.instanceId = instanceId;

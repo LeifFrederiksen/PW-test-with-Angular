@@ -1,16 +1,9 @@
-<div class='panel panel-primary'>
+
     <ai-loadingindicator *ngIf='showLoadingLayer'></ai-loadingindicator>
     
-    <div class='panel-heading'>
-        {{pageTitle}}
-    </div>
-    <div class='panel-body'>
-        <div class='list-group' *ngIf='repositories && repositories.length'>        
-            <label style="width:100%" *ngFor='let repository of repositories'>
-                <a  class="list-group-item"  (click) = 'repositorySelectorClicked(($event), repository)'>
-                        {{ repository.properties.DisplayLabel }}
-                </a>
-            </label>
-        </div>
-    </div>
-</div>
+    <md-nav-list *ngIf='repositories && repositories.length'>
+        <h3 md-subheader>Select data source...</h3>
+            <a md-list-item  *ngFor='let repository of repositories' (click) = 'repositorySelectorClicked(($event), repository)'>
+                            {{ repository.properties.DisplayLabel }}
+                    </a>
+    </md-nav-list>

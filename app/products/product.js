@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var Product = (function () {
     function Product(productId, productName, productCode, releaseDate, price, description, starRating, imageUrl) {
         this.productId = productId;

@@ -3,6 +3,7 @@ import { IRepository } from './repository';
 import { RepositoryService } from './repository.service';
 
 import { Globals } from '../../shared/globals';
+import { MaterialModule, MdTabChangeEvent, MdListModule, MdList, MdListItem, MdCardContent } from '@angular/material';
 
 @Component({
     selector: 'pm-repositories',

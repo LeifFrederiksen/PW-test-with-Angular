@@ -1,32 +1,34 @@
-    <ai-loadingindicator *ngIf='showLoadingLayer'></ai-loadingindicator>
+<ai-loadingindicator *ngIf='showLoadingLayer'></ai-loadingindicator>
 
-    <div *ngIf='navNodes && navNodes.length'>
-        <div class="xxjust-padding">
-            <div class="list-group" style="-webkit-overflow-scrolling: touch;">
-                <a *ngFor='let navNode of navNodes' class="list-group-item">
-                    
-                        <div  class="list-group-item-heading" >
-                            <h4>
-                                <span style="cursor: pointer" *ngIf='navNode.canExpand() && !navNode.isExpanded()' (click) = 'navNode.expand()' class="glyphicon glyphicon-chevron-right"></span>
-                                <span style="cursor: pointer" *ngIf='navNode.isExpanded()' (click) = 'navNode.collapse()' class="glyphicon glyphicon-chevron-down"></span>
-                                <span style="cursor: pointer" (click)='navNode.toggle()'> {{ navNode.properties.Description }} </span>
-                                <!--<span style="cursor: pointer" (click)='navNodeShowDocuments(($event), navNode)'> {{ navNode.properties.Description }} </span>-->
-                            </h4> 
-                        </div>
+<md-list-item *ngFor='let navNode of navNodes'>
 
-                        <p class="list-group-item-text">
-                            <span class="xbtn-group xbtn-group-justified">
-                                <span class="btn btn-xsmall btn-info" style="cursor: pointer" (click)='navNodeShowDocuments(($event), navNode)'> Show docs of this folder</span>
-                                <span class="btn btn-xsmall btn-info" style="cursor: pointer" (click)='navNodeShowDocumentsAdd(($event), navNode)'> Add to current docs </span>
-                                <span class="btn btn-xsmall btn-info" style="cursor: pointer" (click)='resetRecursiveDocCounter();navNodeShowDocumentsRecursive(($event), navNode, 0)'> Get all docs </span>
-
-                                <span class="btn btn-xsmall btn-info" style="cursor: pointer" routerLink="/pwFolderProperties/{{navNode.properties['Key_InstanceId']}}" title="Properties"><span class="glyphicon glyphicon-cog"></span></span>
-                            </span>
-                        </p>
-                    
-                    <pm-navnodes *ngIf="navNode.isExpanded()" [currentNavNode]="navNode"></pm-navnodes>
-                </a>
+        <div class="row tree-node-desc">
+            <div class="col-md-10">
+                <button md-icon-button *ngIf='navNode.canExpand() && !navNode.isExpanded()' (click) = 'navNode.expand()'><md-icon>keyboard_arrow_right</md-icon></button>
+                <button md-icon-button *ngIf='navNode.isExpanded()' (click) = 'navNode.collapse()'><md-icon>keyboard_arrow_down</md-icon></button>
+                <button md-button (click)='navNode.toggle();navNodeShowDocuments(($event), navNode)'> {{ navNode.properties.Description }} </button>
             </div>
-        </div>
-    </div>
+            <div class="col-md-2" style="text-align: right">
+                <button md-icon-button routerLink="/pwFolderProperties/{{navNode.properties['Key_InstanceId']}}" title="Properties">
+                    <md-icon>settings</md-icon>
+                </button>
+                <button md-icon-button [mdMenuTriggerFor]="menu">
+                    <md-icon>more_vert</md-icon>
+                </button>
+            </div>
 
+            <md-menu #menu="mdMenu">
+                        <button md-button class="md-secondary md-icon-button" (click)='navNodeShowDocuments(($event), navNode)'>DOCUMENTS</button>
+                        <button md-button (click)='navNodeShowDocumentsAdd(($event), navNode)'>ADD TO DOCUMENT LIST</button>
+                        <button md-button color="warn" (click)='resetRecursiveDocCounter();navNodeShowDocumentsRecursive(($event), navNode, 0)'>GET ALL DOCUMENTS</button>
+            </md-menu>
+
+        </div> 
+
+
+    <div *ngIf="navNode.isExpanded()" class="tree-styling">
+        <md-list-item>
+            <pm-navnodes [currentNavNode]="navNode"></pm-navnodes>
+        </md-list-item>
+    </div>
+</md-list-item>

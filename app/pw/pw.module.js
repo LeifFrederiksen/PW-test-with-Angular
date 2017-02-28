@@ -5,6 +5,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var PWFolderNav_component_1 = require("./pwFolderNav/PWFolderNav.component");
 var PWSearchAll_component_1 = require("./pwSearchAll/PWSearchAll.component");
@@ -20,6 +21,7 @@ var repository_service_1 = require("./repositories/repository.service");
 var document_service_1 = require("./documents/document.service");
 var navnode_service_1 = require("./navnodes/navnode.service");
 var folderProperties_service_1 = require("./folderProperties/folderProperties.service");
+var material_1 = require("@angular/material");
 var PWModule = (function () {
     function PWModule() {
     }
@@ -43,7 +45,8 @@ PWModule = __decorate([
                 { path: 'pwFolderProperties/:id', component: folderProperties_component_1.FolderPropertiesComponent },
                 { path: 'pwSearchAll', component: PWSearchAll_component_1.PWSearchAllComponent },
             ]),
-            shared_module_1.SharedModule
+            shared_module_1.SharedModule,
+            material_1.MaterialModule
         ],
         providers: [repository_service_1.RepositoryService, navnode_service_1.NavNodeService, document_service_1.DocumentService, folderProperties_service_1.FolderPropertiesService]
     })

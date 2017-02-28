@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var Globals = (function () {
     function Globals() {
         this.version = "2.1";

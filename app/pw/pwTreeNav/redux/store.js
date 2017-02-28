@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var Subject_1 = require("rxjs/Subject");
 var navnode_service_1 = require("../../navnodes/navnode.service");
@@ -38,6 +39,15 @@ var Store = (function () {
                     _this.errorMessage = error;
                     _this.toggleLoadingLayer(false);
                 }, function () { _this.toggleLoadingLayer(false); });
+                /*
+                this._http
+                    .get(action.url)
+                    .map((res:Response) => res.json())
+                    .subscribe(res => {
+                      this.nodes[action.key] = treeNodeReducer(res, action);
+                      this.treeNodes[action.key].next(this.nodes[action.key]);
+                    });
+                */
             }
         }
     };

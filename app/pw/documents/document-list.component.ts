@@ -58,6 +58,11 @@ export class DocumentListComponent implements OnInit {
 
     ngOnInit() {
         this.descriptionFilterByControl.valueChanges.debounceTime(500).distinctUntilChanged().subscribe(value => this.descriptionFilterBy = value);
+        
+        // Faking...
+        // this.documents = new Array();
+        // this.documents.push(new Document("ole","bole","olebole",null));
+        // this.documents.push(new Document("ole","bole","enlanglangsmøre",null));
     }
 
     getDocumentsInNavNode(navNodeNavigation: NavNodeNavigation): void {

@@ -1,25 +1,13 @@
 
-<div class="container-fluid">
     
     <pm-repositories  class="col-sm-12" *ngIf="getCurrentRepository() == undefined">Loading app ...</pm-repositories>
     
     <div class="row" *ngIf="getCurrentRepository() != undefined" >
-        <div class="col-sm-6">
-            <div class='panel panel-primary' style="height: 80vh;overflow: auto">
-                <div class='panel-heading'>
-                    Folders
-                </div>
-                <div class='panel-body' >
-                    <pm-navnodes (navNodeShowDocumentsSelector)="setNavNodeShowDocuments($event)">Loading app ...</pm-navnodes>
-                </div>
-            </div>
+        <div class="col-sm-6" style="max-height: 500px">
+            <pm-navnodes>Loading...</pm-navnodes>
         </div>
     
         <div class="col-sm-6" >
-            <div class='panel panel-primary' style="height: 80vh;overflow: auto">
-                    <pm-documents>                      Loading app ...</pm-documents>
-                    <!-- [navNode]=currentNavNode --> 
-            </div>
+            <pm-documents>Loading...</pm-documents>
         </div>
     </div>
-</div>

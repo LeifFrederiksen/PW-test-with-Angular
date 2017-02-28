@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var document_service_1 = require("./document.service");
 var pwFolderNav_service_1 = require("../pwFolderNav/pwFolderNav.service");
@@ -56,6 +57,10 @@ var DocumentListComponent = (function () {
     DocumentListComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.descriptionFilterByControl.valueChanges.debounceTime(500).distinctUntilChanged().subscribe(function (value) { return _this.descriptionFilterBy = value; });
+        // Faking...
+        // this.documents = new Array();
+        // this.documents.push(new Document("ole","bole","olebole",null));
+        // this.documents.push(new Document("ole","bole","enlanglangsmøre",null));
     };
     DocumentListComponent.prototype.getDocumentsInNavNode = function (navNodeNavigation) {
         console.log("start search");

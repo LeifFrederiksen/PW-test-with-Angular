@@ -12,20 +12,25 @@ import { CustomReuseStrategy } from './shared/router/custom-reuse-strategy';
 import { ProductModule } from './products/product.module';
 import { PWModule } from "./pw/pw.module";
 
+import { TabNavigator } from './tabnavigator/tabnavigator.component';
+
+import { MaterialModule } from '@angular/material';
+import '../node_modules/hammerjs/hammer.js';
+
+
+
 @NgModule({
   imports:      [   BrowserModule, 
                     HttpModule,
+                    MaterialModule,
                     ProductModule,
                     PWModule,
                     RouterModule.forRoot([
                         { path: '**', component: WelcomeComponent }
                     ]) ],
   declarations: [   AppComponent, 
-                    WelcomeComponent
-                    
-                    // ,
-                    
-
+                    WelcomeComponent,
+                    TabNavigator
                     ],
   bootstrap: [ AppComponent ],
   

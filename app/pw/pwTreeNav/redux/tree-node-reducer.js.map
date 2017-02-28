@@ -1,1 +1,1 @@
-{"version":3,"file":"tree-node-reducer.js","sourceRoot":"","sources":["tree-node-reducer.ts"],"names":[],"mappings":";AACa,QAAA,eAAe,GAAG,UAAC,KAAe,EAAE,MAAU;IAA3B,sBAAA,EAAA,UAAe;IAC7C,MAAM,CAAC,CAAC,MAAM,CAAC,IAAI,CAAC,CAAC,CAAC;QACpB,KAAK,YAAY,CAAC;IAIpB,CAAC;AACH,CAAC,CAAC"}
+{"version":3,"file":"tree-node-reducer.js","sourceRoot":"","sources":["tree-node-reducer.ts"],"names":[],"mappings":";;AACa,QAAA,eAAe,GAAG,UAAC,KAAe,EAAE,MAAU;IAA3B,sBAAA,EAAA,UAAe;IAC7C,MAAM,CAAC,CAAC,MAAM,CAAC,IAAI,CAAC,CAAC,CAAC;QACpB,KAAK,YAAY,CAAC;IAIpB,CAAC;AACH,CAAC,CAAC"}

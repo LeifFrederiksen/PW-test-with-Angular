@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var Document = (function () {
     function Document(documentCode, instanceId, description, properties) {
         this.documentCode = documentCode;
